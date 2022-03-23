@@ -1,17 +1,45 @@
 // action for get products request
-const getProductsReq = () => ({});
+
+import axios from "axios";
+import {
+  GET_PRODUCTS_FAILURE,
+  GET_PRODUCTS_REQ,
+  GET_PRODUCTS_SUCCESS,
+} from "./actionTypes";
+
+// action for get products request
+export const getProductsReq = () => ({
+  type: GET_PRODUCTS_REQ,
+});
 
 // action for get products success
 
-const getProductsSuccess = () => ({});
+export const getProductsSuccess = (payload) => ({
+  type: GET_PRODUCTS_SUCCESS,
+  payload,
+});
 
 // action for get products failure
 
-const getProductsFailure = () => ({});
+export const getProductsFailure = () => ({
+  type: GET_PRODUCTS_FAILURE,
+});
 
 // thunk call to fetch products  list
-const getproductsData = () => ({});
+export const getproductsData = () => {
+  return (dispatch) => {
+    dispatch(getProductsReq());
+    axios
+      .get("https://movie-fake-server.herokuapp.com/products")
+      .then((res) => {
+        dispatch(getProductsSuccess(res.data));
+      })
+      .catch(() => {
+        dispatch(getProductsFailure());
+      });
+  };
+};
 
 // action object for sort  feature
 
-const sortProducts = () => ({});
+export const sortProducts = () => ({});
