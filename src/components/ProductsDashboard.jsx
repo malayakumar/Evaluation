@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getproductsData } from "../Redux/actions";
+import './ProductDashboard.css'
 import "../App.css";
 
 export const Products = () => {
