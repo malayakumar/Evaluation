@@ -1,20 +1,12 @@
-import logo from './logo.svg';
+import { Outlet } from 'react-router-dom';
 import './App.css';
-import{Navbar}from'./components/Navbar'
-import{Routes,Route} from "react-router-dom"
-import{Home} from './components/Home'
-import {About} from './components/About'
-import{Products} from './components/ProductsDashboard'
+import { Navbar } from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
      <Navbar/>
-     <Routes>
-       <Route path={"/"}element={<Home/>}></Route>
-       <Route path={"/about"}element={<About/>}></Route>
-       <Route path={"/products"}element={<Products/>}></Route>
-     </Routes>
+     <Outlet/>
     </div>
   );
 }

@@ -1,5 +1,3 @@
-// action for get products request
-
 import axios from "axios";
 import {
   GET_PRODUCTS_FAILURE,
