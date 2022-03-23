@@ -22,7 +22,7 @@ export const Products = () => {
   };
   return (
     <>
-      <h2>Products</h2>
+      <h2>Fashion</h2>
       <select onChange={handleSort}>
         <option>--sort by --</option>
         <option value="asc">low to high</option>
